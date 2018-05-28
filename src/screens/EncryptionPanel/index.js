@@ -14,7 +14,8 @@ export class EncryptionPanel extends Component {
     message: '',
   };
 
-  beginEncryption = () => {
+  beginEncryption = evt => {
+    evt.preventDefault();
     const { encryptMethod, secretKey, onSuccess, onError } = this.props;
     try {
       const result = encryptMethod(this.state.message, secretKey);

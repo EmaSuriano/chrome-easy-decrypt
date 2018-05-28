@@ -3,11 +3,11 @@ import CryptoJS from 'crypto-js';
 const isEncrypter = obj => obj.encrypt && obj.decrypt;
 
 const parseEncrypter = ({ encrypt, decrypt }) => ({
-  encrypt,
+  encrypt: (...args) => encrypt(...args).toString(),
   decrypt: (...args) => decrypt(...args).toString(CryptoJS.enc.Utf8),
 });
 
-export const Encrypters = Object.entries(CryptoJS)
+export const Ciphers = Object.entries(CryptoJS)
   .filter(([key, value]) => isEncrypter(value))
   .reduce(
     (acc, [key, value]) => ({
