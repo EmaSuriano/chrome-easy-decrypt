@@ -1,0 +1,24 @@
+{
+  "name": "chrome-easy-encrypt",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.13.0",
+    "mineral-ui": "^0.33.0",
+    "react": "^16.4.0",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.4.0",
+    "react-notification": "^6.8.2",
+    "react-scripts": "1.1.4",
+    "react-tabs": "^2.2.2",
+    "styled-components": "^3.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
