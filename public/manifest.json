@@ -2,11 +2,11 @@
   "manifest_version": 2,
   "name": "Chrome Easy Encrypt",
   "description": "Encrypt and Decrypt extension for Chrome",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "icons": {
-    "16": "data-protection.png",
-    "48": "data-protection.png",
-    "128": "data-protection.png"
+    "16": "key.png",
+    "48": "key.png",
+    "128": "key.png"
   },
   "browser_action": {
     "default_popup": "index.html",
