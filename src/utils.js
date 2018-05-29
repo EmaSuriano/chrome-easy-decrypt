@@ -8,7 +8,7 @@ const parseEncrypter = ({ encrypt, decrypt }) => ({
 });
 
 export const Ciphers = Object.entries(CryptoJS)
-  .filter(([key, value]) => isEncrypter(value))
+  .filter(entry => isEncrypter(entry[1]))
   .reduce(
     (acc, [key, value]) => ({
       ...acc,
@@ -16,6 +16,10 @@ export const Ciphers = Object.entries(CryptoJS)
     }),
     {},
   );
+
+export function onChangeText({ target: { id, value } }) {
+  this.setState({ [id]: value });
+}
 
 export const STATUS_ENCRYPTION = {
   SUCCESS: 'SUCCESS',
