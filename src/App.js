@@ -4,7 +4,10 @@ import { Ciphers, STATUS_ENCRYPTION } from './utils';
 import CryptoJS from 'crypto-js';
 import EncryptionPanel from './screens/EncryptionPanel';
 import './App.css';
+import IconVpnKey from 'mineral-ui-icons/IconVpnKey';
+import IconLockOutline from 'mineral-ui-icons/IconLockOutline';
 import EncryptionResult from './shared/EncryptionResult';
+import NewEncryptionPanel from './shared/NewEncryptionPanel';
 import { ThemeProvider } from 'mineral-ui/themes';
 import {
   Box,
@@ -35,21 +38,20 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    return (
-      <Fragment>
-        {this.props.children}
-        {this.state.error && (
-          <div>
-            <h2>Oh-no! Something went wrong</h2>
-            <p className="red">
-              {this.state.error && this.state.error.toString()}
-            </p>
-          </div>
-        )}
-      </Fragment>
+    return this.state.error ? (
+      <div>
+        <h2>Oh-no! Something went wrong</h2>
+        <p className="red">{this.state.error && this.state.error.toString()}</p>
+      </div>
+    ) : (
+      this.props.children
     );
   }
 }
+
+const Separator = () => (
+  <div style={{ border: ' 1px solid #c8d1e0', height: '1px' }} />
+);
 
 class App extends Component {
   state = {
@@ -88,13 +90,14 @@ class App extends Component {
             width="20em"
             marginHorizontal="auto"
             textAlign="center"
-            marginBottom="2em"
+            marginBottom="1em"
+            marginTop="0.5em"
           >
-            <header className="App-header">
-              <Text element="h1" align="center" color="white">
-                Easy Encrypt 🔑
-              </Text>
-            </header>
+            <Text element="h2" align="center" verticalAlign="bottom">
+              Easy Encrypt{' '}
+              <IconVpnKey size="1.5em" verticalAlign="bottom" color="gold" />
+            </Text>
+            <Separator />
           </Box>
           <Box marginHorizontal="auto" textAlign="center" width="16em">
             <Box marginBottom="1em">
@@ -105,12 +108,12 @@ class App extends Component {
                 }
                 caption={
                   <span>
-                    Algorithm which will cipher our Message.
+                    Encryption Algorithm,{' '}
                     <Link
                       target="_blank"
                       href="https://github.com/brix/crypto-js/blob/develop/docs/QuickStartGuide.wiki#Ciphers"
                     >
-                      Here are the details about each one.
+                      for more information.
                     </Link>
                   </span>
                 }
@@ -122,7 +125,7 @@ class App extends Component {
               <FormField
                 label="Secret Key"
                 {...!this.state.secretKey && { required: true }}
-                caption="Cipher seed, it will be used in encryption and decryption."
+                caption="Cipher seed, it will be used in the process."
               >
                 <TextInput
                   id="secretKey"
@@ -134,30 +137,22 @@ class App extends Component {
                 />
               </FormField>
             </Box>
-
-            <Tabs>
-              <TabList>
-                <Tab>Encrypt</Tab>
-                <Tab>Decrypt</Tab>
-              </TabList>
-              <TabPanel>
-                <EncryptionPanel
-                  secretKey={this.state.secretKey}
-                  onSuccess={this.onSuccessEncryption}
-                  onError={this.onErrorEncryption}
-                  encryptMethod={cipher.encrypt}
-                />
-              </TabPanel>
-              <TabPanel>
-                <EncryptionPanel
-                  secretKey={this.state.secretKey}
-                  onSuccess={this.onSuccessEncryption}
-                  onError={this.onErrorEncryption}
-                  encryptMethod={cipher.decrypt}
-                />
-              </TabPanel>
-            </Tabs>
-            <EncryptionResult message={result.message} status={result.status} />
+            <NewEncryptionPanel
+              secretKey={this.state.secretKey}
+              onSuccess={this.onSuccessEncryption}
+              onError={this.onErrorEncryption}
+              cipher={cipher}
+            />
+            <Box marginTop="10px" marginBottom="10px">
+              <Text align="right">
+                <Link
+                  target="_blank"
+                  href="https://github.com/EmaSuriano/chrome-easy-decrypt"
+                >
+                  Contribute to this project!
+                </Link>
+              </Text>
+            </Box>
           </Box>
         </ErrorBoundary>
       </ThemeProvider>
