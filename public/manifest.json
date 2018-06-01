@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Chrome Easy Encrypt",
-  "description": "Encrypt and Decrypt extension for Chrome",
-  "version": "1.0.0",
+  "name": "Easy Encrypt",
+  "description":
+    "Encrypt and Decrypt a message using different Cyphers powered by crypto-js",
+  "version": "1.0.1",
   "icons": {
     "16": "key.png",
     "48": "key.png",

@@ -1,6 +1,6 @@
 {
   "name": "chrome-easy-encrypt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.9-1",
