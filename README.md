@@ -1,8 +1,13 @@
 # chrome-easy-encrypt
 
 <div align="center">
+  <a href="https://chrome.google.com/webstore/detail/pdpinaffkgjneengfdgoohjipndeopcn">
     <img alt="Easy-decrypt-logo" src="./public/key.png" height="100px" />
-    Easy Encrypt
+  </a>
+</div>
+
+<div align="center">
+  <strong>Easy Encrypt</strong>
 </div>
 
 > Open Source Chrome extension to encrypt and decrypt a message in seconds!
