@@ -43,5 +43,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://chrome.google.com/webstore/detail/easy-encrypt/pdpinaffkgjneengfdgoohjipndeopcn",
+  "license": "MIT"
 }

@@ -12,11 +12,10 @@
 
 ## Technical Overview
 
-This extension was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app), which helps a lot in development due to all the great features it has!
-
-I choose [`mineral-ui`](http://mineral-ui.com/) for all the React components: `Button`, `Select`, `TextField`, and many more ... So if you like how they look please go and check their documentation which is awesome!
-
-And at last, to encrypt/decrypt a message I use [`crypto-js`](https://github.com/brix/crypto-js) because it provides a total of 7 ciphers so the user can easily decide which suits best for him.
+- React application bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and embedded in a chrome popup.
+- The components are based on [`mineral-ui`](http://mineral-ui.com/).
+- The process of encryption/decryption is handled by [`crypto-js`](https://github.com/brix/crypto-js).
+- **Only client-side, no server communication.**
 
 ## Setup
 
