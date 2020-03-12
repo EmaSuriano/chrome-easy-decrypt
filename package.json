@@ -6,6 +6,7 @@
     "@emotion/is-prop-valid": "^0.8.8",
     "@emotion/styled-base": "^10.0.30",
     "crypto-js": "^3.1.9-1",
+    "emotion-theming": "^10.0.27",
     "mineral-ui": "^0.58.0",
     "mineral-ui-icons": "^0.5.0",
     "react": "^16.9.0",

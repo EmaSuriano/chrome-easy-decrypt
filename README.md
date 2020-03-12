@@ -1,12 +1,14 @@
-# chrome-easy-decrypt
+# chrome-easy-encrypt
 
 <div align="center">
     <img alt="Easy-decrypt-logo" src="./public/key.png" height="100px" />
+    Easy Encrypt
 </div>
 
 > Open Source Chrome extension to encrypt and decrypt a message in seconds!
 
-[Link to the store](https://chrome.google.com/webstore/detail/pdpinaffkgjneengfdgoohjipndeopcn)
+- [Link to the store](https://chrome.google.com/webstore/detail/pdpinaffkgjneengfdgoohjipndeopcn)
+- [Roadmap](./ROADMAP.md)
 
 ## Technical Overview
 
@@ -35,10 +37,6 @@ And at last, to encrypt/decrypt a message I use [`crypto-js`](https://github.com
 | :---------------------: | :---------------------: | :---------------------: |
 | ![](./screenshot/1.png) | ![](./screenshot/2.png) | ![](./screenshot/3.png) |
 
-## License
-
-MIT © Emanuel Suriano – [@Emasuriano](https://twitter.com/emasuriano) – emanuel.suriano@gmail.com
-
 ## Contributing
 
 1. Fork it (<https://github.com/EmaSuriano/chrome-easy-decrypt/fork>)
@@ -46,3 +44,7 @@ MIT © Emanuel Suriano – [@Emasuriano](https://twitter.com/emasuriano) – ema
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request
+
+## License
+
+MIT © Emanuel Suriano
