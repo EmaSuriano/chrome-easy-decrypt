@@ -1,36 +1,47 @@
 {
   "name": "chrome-easy-encrypt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/styled-base": "^10.0.30",
     "crypto-js": "^3.1.9-1",
-    "glamor": "^2.20.40",
-    "glamorous": "^4.13.0",
-    "mineral-ui": "^0.33.0",
-    "mineral-ui-icons": "^0.4.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
+    "mineral-ui": "^0.58.0",
+    "mineral-ui-icons": "^0.5.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "lint": "eslint src"
   },
   "author": {
     "email": "emanuel.suriano@gmail.com",
     "name": "Emanuel Suriano"
   },
-  "keywords": ["chrome", "encrypt", "easy", "cipher", "extension"],
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.3",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.8.2"
+  "keywords": [
+    "chrome",
+    "encrypt",
+    "easy",
+    "cipher",
+    "extension"
+  ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

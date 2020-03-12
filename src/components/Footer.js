@@ -3,7 +3,7 @@ import { Box, Text, Link } from 'mineral-ui';
 
 const Footer = () => (
   <Box marginTop="10px" marginBottom="10px">
-    <Text align="right">
+    <Text align="end">
       <Link
         target="_blank"
         href="https://github.com/EmaSuriano/chrome-easy-decrypt"

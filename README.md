@@ -16,44 +16,22 @@ I choose [`mineral-ui`](http://mineral-ui.com/) for all the React components: `B
 
 And at last, to encrypt/decrypt a message I use [`crypto-js`](https://github.com/brix/crypto-js) because it provides a total of 7 ciphers so the user can easily decide which suits best for him.
 
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    logo.png
-  src/
-    /__tests__ // test folder for Screens
-      App.test.js
-    /components //folder for shared components
-      /__tests__ // test folder for shared components
-        EncryptionPanel.test.js
-        Footer.test.js
-        Header.test.js
-      EncryptionPanel
-      Footer
-      Header
-      ...
-    App.js //Main screen
-    index.js
-```
-
-## Installation
+## Setup
 
 ```bash
-npm install
-npm start
+# install deps
+> yarn
+
+# start project
+> yarn start
+
+# run lint
+> yarn lint
 ```
 
 ## Screenshots
 
-| Main Page               | Filling Required fields | Encrypted!              |
+|        Main Page        | Filling Required fields |       Encrypted!        |
 | :---------------------: | :---------------------: | :---------------------: |
 | ![](./screenshot/1.png) | ![](./screenshot/2.png) | ![](./screenshot/3.png) |
 

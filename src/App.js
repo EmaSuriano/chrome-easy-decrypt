@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { IconVpnKey } from 'mineral-ui-icons';
 import { ThemeProvider } from 'mineral-ui/themes';
 import { Box, Text, TextInput, FormField, Select, Link } from 'mineral-ui';
+import Flex, { FlexItem } from 'mineral-ui/Flex';
 import EncryptionPanel from './components/EncryptionPanel';
 import { Ciphers, onChangeText } from './utils';
 import ErrorBoundary from './components/ErrorBoundary';
 import Separator from './components/Separator';
 import Footer from './components/Footer';
 
-const cipherList = Object.keys(Ciphers).map(encryperName => ({
-  text: encryperName,
-  value: encryperName,
+const cipherList = Object.keys(Ciphers).map(name => ({
+  text: name,
+  value: name,
 }));
 
 class App extends Component {
@@ -35,10 +36,16 @@ class App extends Component {
             marginBottom="1em"
             marginTop="0.5em"
           >
-            <Text element="h2" align="center" verticalAlign="bottom">
-              Easy Encrypt{' '}
-              <IconVpnKey size="1.5em" verticalAlign="bottom" color="gold" />
-            </Text>
+            <Flex justifyContent="center" alignItems="center">
+              <FlexItem>
+                <Text as="h2" align="center" verticalAlign="bottom">
+                  Easy Encrypt
+                </Text>
+              </FlexItem>
+              <FlexItem>
+                <IconVpnKey size="2em" verticalAlign="bottom" color="gold" />
+              </FlexItem>
+            </Flex>
             <Separator />
           </Box>
           <Box marginHorizontal="auto" textAlign="center" width="16em">
@@ -66,7 +73,7 @@ class App extends Component {
             <Box marginBottom="1em">
               <FormField
                 label="Secret Key"
-                {...!secretKey && { required: true }}
+                {...(!secretKey && { required: true })}
                 caption="Cipher seed, it will be used in the process."
               >
                 <TextInput

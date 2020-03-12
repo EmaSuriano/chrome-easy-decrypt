@@ -11,7 +11,10 @@ const ERROR_MESSAGE =
 class EncryptionPanel extends Component {
   static propTypes = {
     secretKey: PropTypes.string.isRequired,
-    cipher: PropTypes.func.isRequired,
+    cipher: PropTypes.shape({
+      encrypt: PropTypes.func.isRequired,
+      decrypt: PropTypes.func.isRequired,
+    }),
   };
 
   state = {
@@ -70,13 +73,13 @@ class EncryptionPanel extends Component {
         <FormField
           label="Original Message"
           required={!originalMessage}
-          {...error === 'encrypt' && {
+          {...(error === 'encrypt' && {
             variant: 'danger',
             caption: ERROR_MESSAGE,
-          }}
+          })}
         >
           <TextArea
-            rows="3"
+            rows={3}
             id="originalMessage"
             value={originalMessage}
             onChange={this.onChangeMessage}
@@ -107,14 +110,13 @@ class EncryptionPanel extends Component {
         <FormField
           label="Encrypted Message"
           required={!encryptedMessage}
-          variant={encryptedMessage === ERROR_MESSAGE && 'danger'}
-          {...error === 'decrypt' && {
+          {...(error === 'decrypt' && {
             variant: 'danger',
             caption: ERROR_MESSAGE,
-          }}
+          })}
         >
           <TextArea
-            rows="3"
+            rows={3}
             id="encryptedMessage"
             value={encryptedMessage}
             onChange={this.onChangeMessage}
